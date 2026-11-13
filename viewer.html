@@ -81,7 +81,13 @@
 
         loader.load('./models/characters.glb', (gltf) => {
             const model = gltf.scene;
-
+            
+            model.traverse((child) => {
+                if (child.isMesh) {
+                    console.log(child.material);
+                }
+            });
+            
             // Center and resize model
             const box = new THREE.Box3().setFromObject(model);
             const center = box.getCenter(new THREE.Vector3());
