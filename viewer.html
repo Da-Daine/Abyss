@@ -82,9 +82,11 @@
         loader.load('./models/characters.glb', (gltf) => {
             const model = gltf.scene;
             
+           // Change model materials
             model.traverse((child) => {
                 if (child.isMesh) {
-                    console.log(child.material);
+                    child.material.roughness = 0.3;
+                    child.material.metalness = 0.5;
                 }
             });
             
