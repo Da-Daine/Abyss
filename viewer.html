@@ -39,8 +39,13 @@
 
         // Scene
         const scene = new THREE.Scene();
-        scene.background = new THREE.Color(0x202020);
+        scene.background = new THREE.Color(0x061b35);
 
+        scene.fog = new THREE.Fog(
+            0x061b35,
+            5,
+            35
+        );
         // Camera
         const camera = new THREE.PerspectiveCamera(
             45,
